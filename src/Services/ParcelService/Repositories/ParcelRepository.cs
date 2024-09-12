@@ -1,36 +1,60 @@
-﻿using ParcelService.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ParcelService.Data;
+using ParcelService.Entities;
 
 namespace ParcelService.Repositories;
 
 public class ParcelRepository : IParcelRepository
 {
+    private readonly ParcelDbContext _dbContext;
+    public ParcelRepository(ParcelDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
     public void AddParcel(Parcel parcel)
     {
-        throw new NotImplementedException();
+        _dbContext.Parcels.Add(parcel);
     }
 
-    public Task<List<Parcel>> GetNewParcels()
+    public async Task<List<Parcel>?> GetNewParcels()
     {
-        throw new NotImplementedException();
+        var parcels = await _dbContext.Parcels
+            .Where(p => p.Status == Status.New).ToListAsync();
+
+        return parcels.Any() ? parcels : null;
     }
 
-    public Task<List<Parcel>> GetNewParcelsFromCity(string city)
+    public async Task<List<Parcel>?> GetNewParcelsFromCity(string city)
     {
-        throw new NotImplementedException();
+        var parcels =  await _dbContext.Parcels
+            .Where(p => p.Status == Status.New && p.FromCity == city).ToListAsync();
+
+        return parcels.Any() ? parcels : null;
     }
 
-    public Task<List<Parcel>> GetNewParcelsInCountry(string country)
+    public async Task<List<Parcel>?> GetNewParcelsInCountry(string country)
     {
-        throw new NotImplementedException();
+        var parcels = await _dbContext.Parcels
+            .Where(p => p.Status == Status.New && p.Country == country).ToListAsync();
+
+        return parcels.Any() ? parcels : null;
     }
 
-    public Task<bool> SaveChangesAsync()
+    public async Task<bool> SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        return await _dbContext.SaveChangesAsync() > 0; 
     }
 
-    public Task<bool> UodateStatus(Status status)
+    public async Task<bool> UpdateStatus(Status status, int parcelId)   
     {
-        throw new NotImplementedException();
+        var parcel = await _dbContext.Parcels.FindAsync(parcelId);
+
+        if (parcel == null) return false;
+
+        parcel.Status = status;
+
+        await _dbContext.SaveChangesAsync();
+
+        return true;
     }
 }
