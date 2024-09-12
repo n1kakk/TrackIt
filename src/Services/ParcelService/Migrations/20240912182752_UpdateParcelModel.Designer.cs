@@ -12,8 +12,8 @@ using ParcelService.Data;
 namespace ParcelService.Migrations
 {
     [DbContext(typeof(ParcelDbContext))]
-    [Migration("20240912133850_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240912182752_UpdateParcelModel")]
+    partial class UpdateParcelModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,8 +50,13 @@ namespace ParcelService.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ToCity")
-                        .HasColumnType("integer");
+                    b.Property<string>("ToCity")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TrackingNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<float>("Weight")
                         .HasColumnType("real");

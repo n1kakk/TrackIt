@@ -9,5 +9,5 @@ public interface IParcelRepository
     Task<List<Parcel>?> GetNewParcels();
     Task<List<Parcel>?> GetNewParcelsInCountry(string country);
     Task<List<Parcel>?> GetNewParcelsFromCity(string city);
-    Task<bool> UpdateStatus(Status status, int parcelId);
+    Task<bool> UpdateStatus(Status status, string trackingNumber);
 }

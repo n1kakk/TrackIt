@@ -22,7 +22,8 @@ namespace ParcelService.Migrations
                     Status = table.Column<int>(type: "integer", nullable: false),
                     Country = table.Column<string>(type: "text", nullable: false),
                     FromCity = table.Column<string>(type: "text", nullable: false),
-                    ToCity = table.Column<int>(type: "integer", nullable: false)
+                    ToCity = table.Column<int>(type: "integer", nullable: false),
+                    TrackingNumber = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

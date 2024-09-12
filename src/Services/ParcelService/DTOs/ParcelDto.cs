@@ -10,5 +10,6 @@ public class ParcelDto
     public Status Status { get; set; }
     public string Country { get; set; }
     public string FromCity { get; set; }
-    public int ToCity { get; set; }
+    public string ToCity { get; set; }
+    public string TrackingNumber { get; set; }
 }

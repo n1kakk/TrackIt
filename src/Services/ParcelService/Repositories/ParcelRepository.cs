@@ -45,9 +45,9 @@ public class ParcelRepository : IParcelRepository
         return await _dbContext.SaveChangesAsync() > 0; 
     }
 
-    public async Task<bool> UpdateStatus(Status status, int parcelId)   
+    public async Task<bool> UpdateStatus(Status status, string trackingNumber)   
     {
-        var parcel = await _dbContext.Parcels.FindAsync(parcelId);
+        var parcel = await _dbContext.Parcels.FindAsync(trackingNumber);
 
         if (parcel == null) return false;
 

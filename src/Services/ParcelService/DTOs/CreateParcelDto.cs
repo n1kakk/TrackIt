@@ -18,5 +18,5 @@ public class CreateParcelDto
     [Required]
     public string FromCity { get; set; }
     [Required]
-    public int ToCity { get; set; }
+    public string ToCity { get; set; }
 }
