@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using ParcelService.DTOs;
 using ParcelService.Entities;
+using ParcelService.Helpers;
 using ParcelService.Repositories;
 
 namespace ParcelService.Services;
@@ -69,7 +69,7 @@ public class ParcelServ: IParcelServ
 
         if (!result)
         {
-            throw new Exception("Failed to save the parcel to the database.");
+            throw new AppException("Failed to save the parcel to the database.");
         }
 
         return _mapper.Map<ParcelDto>(parcel);
@@ -87,7 +87,7 @@ public class ParcelServ: IParcelServ
 
         if (!result)
         {
-            throw new Exception("Failed to update the parcel status in the database.");
+            throw new AppException("Failed to update the parcel status in the database.");
         }
 
         return result;

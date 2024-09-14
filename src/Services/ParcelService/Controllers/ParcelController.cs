@@ -27,11 +27,11 @@ public class ParcelController: ControllerBase
     [HttpGet("newParcels")]
     public async Task<ActionResult<List<ParcelDto>>> GetNewParcels()
     {
-        if(!ModelState.IsValid) return BadRequest();
+        if(!ModelState.IsValid) return BadRequest(ModelState);
 
         var parcelsDto = await _parcelService.GetNewParcelsAsync();
 
-        if (parcelsDto == null) return NotFound("No new parcels found");
+        if (parcelsDto == null) throw new KeyNotFoundException("No new parcels found");
 
         return Ok(parcelsDto);
     }
@@ -39,11 +39,11 @@ public class ParcelController: ControllerBase
     [HttpGet("country/{country}")]
     public async Task<ActionResult<List<ParcelDto>>> GetNewParcelsInCountry(string country)
     {
-        if (!ModelState.IsValid) return BadRequest();
+        if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var parcelsDto = await _parcelService.GetNewParcelsInCountryAsync(country);
 
-        if(parcelsDto == null) return NotFound("No parcels found in the specified country.");
+        if(parcelsDto == null) throw new KeyNotFoundException("No parcels found in the specified country.");
 
         return Ok(parcelsDto);
     }
@@ -51,11 +51,11 @@ public class ParcelController: ControllerBase
     [HttpGet("city/{city}")]
     public async Task<ActionResult<List<ParcelDto>>> GetNewParcelsFromSenderCity(string city)
     {
-        if (!ModelState.IsValid) return BadRequest();
+        if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var parcelsDto = await _parcelService.GetNewParcelsFromCityAsync(city);
 
-        if (parcelsDto == null) return NotFound("No parcels found in the specified city.");
+        if (parcelsDto == null) throw new KeyNotFoundException("No parcels found in the specified city.");
 
         return Ok(parcelsDto);
     }
@@ -63,18 +63,18 @@ public class ParcelController: ControllerBase
     [HttpPut]
     public async Task<ActionResult<bool>> UpdateParcelStatus(Status status, string trackingNumber)
     {
-        if (!ModelState.IsValid) return BadRequest();
+        if (!ModelState.IsValid) return BadRequest(ModelState);
         
         var result = await _parcelService.UpdateParcelStatusAsync(status, trackingNumber);
 
-        if(result == false) return NotFound("Wrong tracking number");
+        if(result == false) throw new KeyNotFoundException("Wrong tracking number");
         return Ok("Status updated");
     }
 
     [HttpPost]
     public async Task<ActionResult<ParcelDto>> CreateParcel(CreateParcelDto createParcelDto)
     {
-        if(!ModelState.IsValid) return BadRequest();
+        if(!ModelState.IsValid) return BadRequest(ModelState);
 
         var newParcel = await _parcelService.CreateParcelAsync(createParcelDto);
         return Ok(newParcel);

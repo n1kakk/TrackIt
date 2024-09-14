@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ParcelService.Data;
+using ParcelService.Helpers;
 using ParcelService.Repositories;
 using ParcelService.Services;
 
@@ -31,6 +32,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.MapControllers();
 
