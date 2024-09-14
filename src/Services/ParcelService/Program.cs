@@ -3,10 +3,15 @@ using ParcelService.Data;
 using ParcelService.Helpers;
 using ParcelService.Repositories;
 using ParcelService.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+//builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(typeof(Program).Assembly));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
