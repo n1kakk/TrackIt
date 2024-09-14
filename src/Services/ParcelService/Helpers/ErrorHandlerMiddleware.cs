@@ -28,15 +28,17 @@ public class ErrorHandlerMiddleware
             {
                 case AppException e:
                     // custom application error
+                    _logger.LogWarning(error, "AppException occurred: {Message}", e.Message);
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;
                 case KeyNotFoundException e:
                     // not found error
+                    _logger.LogInformation(error, "KeyNotFoundException occurred: {Message}", e.Message);
                     response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
                 default:
                     // unhandled error
-                    _logger.LogError(error, error.Message);
+                    _logger.LogError(error, "An unexpected error occurred: {Message}", error.Message);
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
             }
