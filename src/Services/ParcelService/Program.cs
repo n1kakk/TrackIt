@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ParcelDbContext>(opt =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 
 
 builder.Services.AddScoped<IParcelRepository, ParcelRepository>();
-builder.Services.AddScoped<ParcelServ>();
+builder.Services.AddScoped<IParcelServ, ParcelServ>();
 
 var app = builder.Build();
 

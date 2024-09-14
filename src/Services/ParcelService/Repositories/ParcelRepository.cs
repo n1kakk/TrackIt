@@ -11,12 +11,12 @@ public class ParcelRepository : IParcelRepository
     {
         _dbContext = dbContext;
     }
-    public void AddParcel(Parcel parcel)
+    public async Task AddParcelAsync(Parcel parcel)
     {
-        _dbContext.Parcels.Add(parcel);
+       await _dbContext.Parcels.AddAsync(parcel);
     }
 
-    public async Task<List<Parcel>?> GetNewParcels()
+    public async Task<List<Parcel>?> GetNewParcelsAsync()
     {
         var parcels = await _dbContext.Parcels
             .Where(p => p.Status == Status.New).ToListAsync();
@@ -24,7 +24,7 @@ public class ParcelRepository : IParcelRepository
         return parcels.Any() ? parcels : null;
     }
 
-    public async Task<List<Parcel>?> GetNewParcelsFromCity(string city)
+    public async Task<List<Parcel>?> GetNewParcelsFromCityAsync(string city)
     {
         var parcels =  await _dbContext.Parcels
             .Where(p => p.Status == Status.New && p.FromCity == city).ToListAsync();
@@ -32,7 +32,7 @@ public class ParcelRepository : IParcelRepository
         return parcels.Any() ? parcels : null;
     }
 
-    public async Task<List<Parcel>?> GetNewParcelsInCountry(string country)
+    public async Task<List<Parcel>?> GetNewParcelsInCountryAsync(string country)
     {
         var parcels = await _dbContext.Parcels
             .Where(p => p.Status == Status.New && p.Country == country).ToListAsync();
@@ -45,16 +45,22 @@ public class ParcelRepository : IParcelRepository
         return await _dbContext.SaveChangesAsync() > 0; 
     }
 
-    public async Task<bool> UpdateStatus(Status status, string trackingNumber)   
+    //public async Task<bool> UpdateStatusAsync(Status status, string trackingNumber)   
+    //{
+    //    var parcel = await _dbContext.Parcels.FindAsync(trackingNumber);
+
+    //    if (parcel == null) return false;
+
+    //    parcel.Status = status;
+
+    //    await _dbContext.SaveChangesAsync();
+
+    //    return true;
+    //}
+
+    public async Task<Parcel?> GetParcelByTrackingNumberAsync(string trackingNumber)
     {
-        var parcel = await _dbContext.Parcels.FindAsync(trackingNumber);
-
-        if (parcel == null) return false;
-
-        parcel.Status = status;
-
-        await _dbContext.SaveChangesAsync();
-
-        return true;
+        return await _dbContext.Parcels
+            .FirstOrDefaultAsync(p => p.TrackingNumber == trackingNumber);
     }
 }

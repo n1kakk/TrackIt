@@ -15,9 +15,9 @@ public class ParcelController: ControllerBase
 {
     private readonly IMapper _mapper;
     private readonly IParcelRepository _parcelRepo;
-    private readonly ParcelServ _parcelService;
+    private readonly IParcelServ _parcelService;
 
-    public ParcelController(IParcelRepository parcelRepository, IMapper mapper, ParcelServ parcelServ)
+    public ParcelController(IParcelRepository parcelRepository, IMapper mapper, IParcelServ parcelServ)
     {
         _parcelRepo = parcelRepository;
         _mapper = mapper;
@@ -29,11 +29,9 @@ public class ParcelController: ControllerBase
     {
         if(!ModelState.IsValid) return BadRequest();
 
-        var parcels = await _parcelRepo.GetNewParcels();
+        var parcelsDto = await _parcelService.GetNewParcelsAsync();
 
-        if (parcels == null) return NotFound();
-
-        var parcelsDto = _mapper.Map<List<ParcelDto>>(parcels);
+        if (parcelsDto == null) return NotFound("No new parcels found");
 
         return Ok(parcelsDto);
     }
@@ -43,11 +41,9 @@ public class ParcelController: ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest();
 
-        var parcels = await _parcelRepo.GetNewParcelsInCountry(country);
+        var parcelsDto = await _parcelService.GetNewParcelsInCountryAsync(country);
 
-        if(parcels == null) return NotFound();
-
-        var parcelsDto = _mapper.Map<List<ParcelDto>>(parcels);
+        if(parcelsDto == null) return NotFound("No parcels found in the specified country.");
 
         return Ok(parcelsDto);
     }
@@ -57,36 +53,30 @@ public class ParcelController: ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest();
 
-        var parcels = await _parcelRepo.GetNewParcelsFromCity(city);
+        var parcelsDto = await _parcelService.GetNewParcelsFromCityAsync(city);
 
-        if (parcels == null) return NotFound();
-
-        var parcelsDto = _mapper.Map<List<ParcelDto>>(parcels);
+        if (parcelsDto == null) return NotFound("No parcels found in the specified city.");
 
         return Ok(parcelsDto);
     }
 
-    //[HttpPut]
-    //public async Task<IActionResult> UpdateParcelStatus(    )
-    //{
+    [HttpPut]
+    public async Task<ActionResult<bool>> UpdateParcelStatus(Status status, string trackingNumber)
+    {
+        if (!ModelState.IsValid) return BadRequest();
+        
+        var result = await _parcelService.UpdateParcelStatusAsync(status, trackingNumber);
 
-    //}
+        if(result == false) return NotFound("Wrong tracking number");
+        return Ok("Status updated");
+    }
+
     [HttpPost]
     public async Task<ActionResult<ParcelDto>> CreateParcel(CreateParcelDto createParcelDto)
     {
         if(!ModelState.IsValid) return BadRequest();
 
-        var parcel = _mapper.Map<Parcel>(createParcelDto);
-        parcel.TrackingNumber = _parcelService.GenerateTrackingNumber();
-
-        _parcelRepo.AddParcel(parcel);
-
-        var newParcel = _mapper.Map<ParcelDto>(parcel);
-
-        var result = await _parcelRepo.SaveChangesAsync();
-
-        if (!result) return BadRequest("Could not save to dataBase");
-
+        var newParcel = await _parcelService.CreateParcelAsync(createParcelDto);
         return Ok(newParcel);
     }
 

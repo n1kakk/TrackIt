@@ -4,10 +4,11 @@ namespace ParcelService.Repositories;
 
 public interface IParcelRepository
 {
-    void AddParcel(Parcel parcel);
+    Task AddParcelAsync(Parcel parcel);
     Task<bool> SaveChangesAsync();
-    Task<List<Parcel>?> GetNewParcels();
-    Task<List<Parcel>?> GetNewParcelsInCountry(string country);
-    Task<List<Parcel>?> GetNewParcelsFromCity(string city);
-    Task<bool> UpdateStatus(Status status, string trackingNumber);
+    Task<List<Parcel>?> GetNewParcelsAsync();
+    Task<List<Parcel>?> GetNewParcelsInCountryAsync(string country);
+    Task<List<Parcel>?> GetNewParcelsFromCityAsync(string city);
+  //  Task<bool> UpdateStatusAsync(Status status, string trackingNumber);
+    Task<Parcel?> GetParcelByTrackingNumberAsync(string trackingNumber);
 }
