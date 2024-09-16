@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parcel", "Parcel", "{9460E9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelService", "..\src\Services\ParcelService\ParcelService.csproj", "{8DC71E88-C05A-479E-8411-1C73964A9362}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KafkaExperiment", "KafkaExperiment", "{EEC8EE40-20FA-4D54-91B7-F7C340F6D352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeApplicationAPI", "..\src\Services\KafkaExperiment\EmployeeApplicationAPI\EmployeeApplicationAPI.csproj", "{F8902E53-3D61-42EC-8548-2F5E671EB836}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,10 @@ Global
 		{8DC71E88-C05A-479E-8411-1C73964A9362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DC71E88-C05A-479E-8411-1C73964A9362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DC71E88-C05A-479E-8411-1C73964A9362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8902E53-3D61-42EC-8548-2F5E671EB836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8902E53-3D61-42EC-8548-2F5E671EB836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8902E53-3D61-42EC-8548-2F5E671EB836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8902E53-3D61-42EC-8548-2F5E671EB836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,8 @@ Global
 		{FCE2774D-524C-4720-A233-FEAECE9A4227} = {39D00B5D-FECB-403B-B5CA-1E22576E8D9F}
 		{9460E905-B63E-4A42-966F-51759849222E} = {F4A38998-BCB7-4089-ACC2-249637853248}
 		{8DC71E88-C05A-479E-8411-1C73964A9362} = {9460E905-B63E-4A42-966F-51759849222E}
+		{EEC8EE40-20FA-4D54-91B7-F7C340F6D352} = {F4A38998-BCB7-4089-ACC2-249637853248}
+		{F8902E53-3D61-42EC-8548-2F5E671EB836} = {EEC8EE40-20FA-4D54-91B7-F7C340F6D352}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EC67EC7-A0A1-4227-B3E2-7F8E14F1C7B5}
