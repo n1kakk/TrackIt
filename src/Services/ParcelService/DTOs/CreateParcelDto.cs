@@ -1,7 +1,4 @@
-﻿using ParcelService.Entities;
-using System.ComponentModel.DataAnnotations;
-
-namespace ParcelService.DTOs;
+﻿namespace ParcelService.DTOs;
 
 public class CreateParcelDto
 {

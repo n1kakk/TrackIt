@@ -4,7 +4,7 @@ using ParcelService.Entities;
 
 namespace ParcelService.RequestHelpers;
 
-public class MappingProfiles: Profile
+public class MappingProfiles : Profile
 {
     public MappingProfiles()
     {

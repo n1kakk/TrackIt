@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Services",
+    "\\src\\Services\\KafkaExperiment",
+    "\\src\\Services\\KafkaExperiment\\Consumer.Database",
+    "\\src\\Services\\KafkaExperiment\\Consumer.Service"
   ],
-  "SelectedNode": "\\C:\\Users\\79832\\Source\\Repos\\TrackIt",
+  "SelectedNode": "\\src\\TrackItMicroservices.sln",
   "PreviewInSolutionExplorer": false
 }

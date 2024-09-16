@@ -6,7 +6,7 @@ using ParcelService.Repositories;
 
 namespace ParcelService.Services;
 
-public class ParcelServ: IParcelServ
+public class ParcelServ : IParcelServ
 {
     private readonly IParcelRepository _parcelRepo;
     private readonly IMapper _mapper;

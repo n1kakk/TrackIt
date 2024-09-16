@@ -11,7 +11,7 @@ namespace ParcelService.Controllers;
 
 [ApiController]
 [Route("api/parcels")]
-public class ParcelController: ControllerBase
+public class ParcelController : ControllerBase
 {
     private readonly IMapper _mapper;
     private readonly IParcelRepository _parcelRepo;
@@ -39,7 +39,7 @@ public class ParcelController: ControllerBase
     {
         var parcelsDto = await _parcelService.GetNewParcelsInCountryAsync(country);
 
-        if(parcelsDto == null) throw new KeyNotFoundException("No parcels found in the specified country.");
+        if (parcelsDto == null) throw new KeyNotFoundException("No parcels found in the specified country.");
 
         return Ok(parcelsDto);
     }
@@ -57,10 +57,10 @@ public class ParcelController: ControllerBase
     [HttpPut]
     public async Task<ActionResult<bool>> UpdateParcelStatus(Status status, string trackingNumber)
     {
-        
+
         var result = await _parcelService.UpdateParcelStatusAsync(status, trackingNumber);
 
-        if(result == false) throw new KeyNotFoundException("Wrong tracking number");
+        if (result == false) throw new KeyNotFoundException("Wrong tracking number");
         return Ok("Status updated");
     }
 

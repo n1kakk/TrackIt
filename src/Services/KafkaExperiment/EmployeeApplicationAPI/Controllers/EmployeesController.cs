@@ -55,7 +55,7 @@ namespace EmployeeApplicationAPI.Controllers
                 await producer.ProduceAsync("employeeTopic", message);
             }
 
-            return CreatedAtAction(nameof(CreateEmployee), new {id = employee.Id}, employee);
+            return CreatedAtAction(nameof(CreateEmployee), new { id = employee.Id }, employee);
         }
     }
 }

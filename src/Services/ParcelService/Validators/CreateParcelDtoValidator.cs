@@ -3,12 +3,12 @@ using ParcelService.DTOs;
 
 namespace ParcelService.Validators;
 
-public class CreateParcelDtoValidator: AbstractValidator<CreateParcelDto>
+public class CreateParcelDtoValidator : AbstractValidator<CreateParcelDto>
 {
     public CreateParcelDtoValidator()
     {
-        RuleFor(p => p.Weight).GreaterThan(0).WithMessage("Weight must be greater than zero."); 
-        RuleFor(p => p.SenderEmail).EmailAddress().WithMessage("Invalid sender email format."); 
+        RuleFor(p => p.Weight).GreaterThan(0).WithMessage("Weight must be greater than zero.");
+        RuleFor(p => p.SenderEmail).EmailAddress().WithMessage("Invalid sender email format.");
         RuleFor(p => p.ReceiverEmail).EmailAddress().WithMessage("Invalid receiver email format.");
 
         RuleFor(p => p).Must(p => p.SenderEmail != p.ReceiverEmail)

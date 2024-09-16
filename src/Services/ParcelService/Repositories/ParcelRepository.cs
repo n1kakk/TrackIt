@@ -13,7 +13,7 @@ public class ParcelRepository : IParcelRepository
     }
     public async Task AddParcelAsync(Parcel parcel)
     {
-       await _dbContext.Parcels.AddAsync(parcel);
+        await _dbContext.Parcels.AddAsync(parcel);
     }
 
     public async Task<List<Parcel>?> GetNewParcelsAsync()
@@ -26,7 +26,7 @@ public class ParcelRepository : IParcelRepository
 
     public async Task<List<Parcel>?> GetNewParcelsFromCityAsync(string city)
     {
-        var parcels =  await _dbContext.Parcels
+        var parcels = await _dbContext.Parcels
             .Where(p => p.Status == Status.New && p.FromCity == city).ToListAsync();
 
         return parcels.Any() ? parcels : null;
@@ -42,7 +42,7 @@ public class ParcelRepository : IParcelRepository
 
     public async Task<bool> SaveChangesAsync()
     {
-        return await _dbContext.SaveChangesAsync() > 0; 
+        return await _dbContext.SaveChangesAsync() > 0;
     }
 
     //public async Task<bool> UpdateStatusAsync(Status status, string trackingNumber)   
