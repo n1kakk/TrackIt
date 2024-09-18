@@ -17,11 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KafkaExperiment", "KafkaExp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeApplicationAPI", "..\src\Services\KafkaExperiment\EmployeeApplicationAPI\EmployeeApplicationAPI.csproj", "{F8902E53-3D61-42EC-8548-2F5E671EB836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer.Service", "..\src\Services\KafkaExperiment\Consumer.Service\Consumer.Service.csproj", "{C70695CD-5E60-4D49-B42F-C2A4F2F19DA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Service", "..\src\Services\KafkaExperiment\Consumer.Service\Consumer.Service.csproj", "{C70695CD-5E60-4D49-B42F-C2A4F2F19DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer.Shared", "..\src\Services\KafkaExperiment\Consumer.Shared\Consumer.Shared.csproj", "{78DFCA03-DEBC-4576-BF0B-BBE95928ECCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Shared", "..\src\Services\KafkaExperiment\Consumer.Shared\Consumer.Shared.csproj", "{78DFCA03-DEBC-4576-BF0B-BBE95928ECCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer.Database", "..\src\Services\KafkaExperiment\Consumer.Database\Consumer.Database.csproj", "{8210BBF6-F762-4A03-902D-A1BD458375D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Database", "..\src\Services\KafkaExperiment\Consumer.Database\Consumer.Database.csproj", "{8210BBF6-F762-4A03-902D-A1BD458375D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing", "..\src\Services\KafkaExperiment\EventSourcing\EventSourcing.csproj", "{692A478E-FA8C-4173-8999-8646FEAB1929}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{8210BBF6-F762-4A03-902D-A1BD458375D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8210BBF6-F762-4A03-902D-A1BD458375D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8210BBF6-F762-4A03-902D-A1BD458375D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692A478E-FA8C-4173-8999-8646FEAB1929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692A478E-FA8C-4173-8999-8646FEAB1929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692A478E-FA8C-4173-8999-8646FEAB1929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692A478E-FA8C-4173-8999-8646FEAB1929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{C70695CD-5E60-4D49-B42F-C2A4F2F19DA7} = {EEC8EE40-20FA-4D54-91B7-F7C340F6D352}
 		{78DFCA03-DEBC-4576-BF0B-BBE95928ECCA} = {EEC8EE40-20FA-4D54-91B7-F7C340F6D352}
 		{8210BBF6-F762-4A03-902D-A1BD458375D2} = {EEC8EE40-20FA-4D54-91B7-F7C340F6D352}
+		{692A478E-FA8C-4173-8999-8646FEAB1929} = {EEC8EE40-20FA-4D54-91B7-F7C340F6D352}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EC67EC7-A0A1-4227-B3E2-7F8E14F1C7B5}
