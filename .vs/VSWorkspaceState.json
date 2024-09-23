@@ -3,10 +3,12 @@
     "",
     "\\src",
     "\\src\\Services",
+    "\\src\\Services\\Identity",
+    "\\src\\Services\\Identity\\IdentityService",
     "\\src\\Services\\KafkaExperiment",
     "\\src\\Services\\KafkaExperiment\\Consumer.Database",
     "\\src\\Services\\KafkaExperiment\\Consumer.Service"
   ],
-  "SelectedNode": "\\src\\TrackItMicroservices.sln",
+  "SelectedNode": "\\src\\Services\\Identity\\IdentityService",
   "PreviewInSolutionExplorer": false
 }
