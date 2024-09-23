@@ -3,11 +3,58 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DBA6C84B-365E-4F4F-999C-47254DC00C87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{DC6AF3EB-19BE-4C00-824B-368B57CD745A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\Services\IdentityService\IdentityService.csproj", "{BCD7D364-0254-4079-BB3E-816594D73B2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelService", "src\Services\ParcelService\ParcelService.csproj", "{6DF17EBC-C797-4E46-8A45-23A125767DD7}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EC67EC7-A0A1-4227-B3E2-7F8E14F1C7B5}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Debug|x64.Build.0 = Debug|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Debug|x86.Build.0 = Debug|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Release|x64.ActiveCfg = Release|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Release|x64.Build.0 = Release|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Release|x86.ActiveCfg = Release|Any CPU
+		{BCD7D364-0254-4079-BB3E-816594D73B2D}.Release|x86.Build.0 = Release|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Debug|x64.Build.0 = Debug|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Debug|x86.Build.0 = Debug|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Release|x64.ActiveCfg = Release|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Release|x64.Build.0 = Release|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Release|x86.ActiveCfg = Release|Any CPU
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC6AF3EB-19BE-4C00-824B-368B57CD745A} = {DBA6C84B-365E-4F4F-999C-47254DC00C87}
+		{BCD7D364-0254-4079-BB3E-816594D73B2D} = {DC6AF3EB-19BE-4C00-824B-368B57CD745A}
+		{6DF17EBC-C797-4E46-8A45-23A125767DD7} = {DC6AF3EB-19BE-4C00-824B-368B57CD745A}
 	EndGlobalSection
 EndGlobal
