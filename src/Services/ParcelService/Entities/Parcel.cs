@@ -2,7 +2,7 @@
 
 public class Parcel
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; set; } 
     public float Weight { get; set; }
     public string SenderEmail { get; set; }
     public string ReceiverEmail { get; set;}

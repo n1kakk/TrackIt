@@ -61,6 +61,8 @@ public class ParcelServ: IParcelServ
     public async Task<ParcelDto> CreateParcelAsync(CreateParcelDto createParcelDto)
     {
         var parcel = _mapper.Map<Parcel>(createParcelDto);
+
+        parcel.Id = Guid.NewGuid();
         parcel.TrackingNumber = GenerateTrackingNumber();
 
         await _parcelRepo.AddParcelAsync(parcel);
