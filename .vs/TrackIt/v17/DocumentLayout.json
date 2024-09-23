@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\79832\\source\\repos\\TrackIt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Database\\EmployeeReportDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Services\\KafkaExperiment\\Consumer.Database\\EmployeeReportDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Service\\Consumer.Service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Services\\KafkaExperiment\\Consumer.Service\\Consumer.Service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EmployeeReportDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Database\\EmployeeReportDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Services\\KafkaExperiment\\Consumer.Database\\EmployeeReportDbContext.cs",
+              "ToolTip": "C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Database\\EmployeeReportDbContext.cs",
+              "RelativeToolTip": "src\\Services\\KafkaExperiment\\Consumer.Database\\EmployeeReportDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T11:19:44.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Consumer.Service.csproj",
               "DocumentMoniker": "C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Service\\Consumer.Service.csproj",
               "RelativeDocumentMoniker": "src\\Services\\KafkaExperiment\\Consumer.Service\\Consumer.Service.csproj",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Worker.cs",
               "DocumentMoniker": "C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Service\\Worker.cs",
               "RelativeDocumentMoniker": "src\\Services\\KafkaExperiment\\Consumer.Service\\Worker.cs",
@@ -51,12 +68,11 @@
               "RelativeToolTip": "src\\Services\\KafkaExperiment\\Consumer.Service\\Worker.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAIwDIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:26:32.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T18:26:32.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\79832\\source\\repos\\TrackIt\\src\\Services\\KafkaExperiment\\Consumer.Service\\Program.cs",
               "RelativeDocumentMoniker": "src\\Services\\KafkaExperiment\\Consumer.Service\\Program.cs",
@@ -64,8 +80,7 @@
               "RelativeToolTip": "src\\Services\\KafkaExperiment\\Consumer.Service\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:01:53.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T18:01:53.967Z"
             }
           ]
         }
